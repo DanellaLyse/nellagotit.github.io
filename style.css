@@ -1,46 +1,93 @@
-style.css
-
 body {
     margin: 0;
-    background: black;
-    color: #00ffcc;
-    font-family: 'Courier New', Courier, monospace;
-    text-align: center;
+    background: #050510;
+    font-family: Arial, sans-serif;
+    color: #00f7ff;
+    overflow-x: hidden;
 }
 
-.screen { 
+.section {
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-
+    align-items: center;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease;
+    text-align: center;
 }
 
-.title {
-    font-size:60px;
-    text-shadow: 0 0 20px #00fc;
-    margin-bottom: 0.5em;
+.section.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.subtitle {
-    font-size: 20px;
-    margin-bottom: 40px;
-
+/* HERO */
+.hero {
+    background: radial-gradient(circle at center, #0a0a2a 0%, #000 70%);
 }
 
-.menu button {
-    background: black;
-    color: #00ffcc;
-    border: 2px solid #00ffcc;
-    padding: 15 4px;
-    margin: 10px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: 0.3s;
+h1 {
+    font-size: 70px;
+    letter-spacing: 5px;
 }
 
-.menu button:hover {
-    background: #00ffcc;
-    color: black;
-    box-shadow:0 0 20px #00ffcc;
+/* Glitch Effect */
+.glitch {
+    position: relative;
+    color: #00f7ff;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    width: 100%;
+}
+
+.glitch::before {
+    animation: glitchTop 2s infinite;
+    color: #ff00ff;
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+}
+
+.glitch::after {
+    animation: glitchBottom 2s infinite;
+    color: #00ffff;
+    clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+}
+
+@keyframes glitchTop {
+    0% { transform: translate(0); }
+    50% { transform: translate(-3px, -3px); }
+    100% { transform: translate(0); }
+}
+
+@keyframes glitchBottom {
+    0% { transform: translate(0); }
+    50% { transform: translate(3px, 3px); }
+    100% { transform: translate(0); }
+}
+
+/* Section Colors */
+.about { background: #0c0c2e; }
+.projects { background: #111133; }
+.skills { background: #0c0c2e; }
+.contact { background: #000; }
+
+/* Scanline Overlay */
+.scanlines {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.02),
+        rgba(255,255,255,0.02) 2px,
+        transparent 2px,
+        transparent 4px
+    );
+    pointer-events: none;
 }
