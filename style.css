@@ -6,7 +6,7 @@ body {
     background: #0a0a0a;
     color: #ffffff;
     overflow-x: hidden;
-    cursor: none; /* hide default cursor */
+    cursor: auto; /* hide default cursor */
 }
 
 /* ===== Progress Bar ===== */
@@ -213,5 +213,6 @@ body {
 .progress-bar {
     animation: neonPulse 1.5s infinite alternate;
 }
+
 
 
