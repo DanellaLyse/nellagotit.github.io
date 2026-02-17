@@ -5,79 +5,76 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Lottie Web Component -->
     <script
-  src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js"
-  type="module"
+      src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js"
+      type="module"
     ></script>
-
-   
 </head>
 
 <body>
-<div class="progress-container">
-    <div class="progress-bar"></div>
-</div>
-
-<div class="scanlines"></div>
-
-<section class="section hero">
-
-    <div class="hero-content">
-        <h1 class="glitch" data-text="DANELLASPACE">DANELLA SPACE</h1>
-
-        
-        <p class="typing"></p>
-
-        
-        <p id="danellaTrait"></p>
-    
-        <!-- Cyber command buttons -->
-        <div class="command-panel">
-            <button onclick="scrollToSection('about')">User Profile</button>
-            <button onclick="scrollToSection('projects')">Projects</button>
-            <button onclick="scrollToSection('blog')">Blog</button>
-            <button onclick="scrollToSection('contact')">Connect</button>
-        </div>
-        <div class="floating -lottie>
-            <dotlottie-wv src="..."></dotlottie-wc>
+    <!-- Progress bar -->
+    <div class="progress-container">
+        <div class="progress-bar"></div>
     </div>
 
-    <!-- Floating hologram image -->
-    <img src="your-image.png" class="floating-img">
+    <!-- Scanlines overlay -->
+    <div class="scanlines"></div>
 
-</section>
+    <!-- Hero Section -->
+    <section class="section hero">
+        <div class="hero-content">
+            <h1 class="glitch" data-text="DANELLA SPACE">DANELLA SPACE</h1>
+            <p class="typing"></p>
+            
+            <div class="command-panel">
+                <button onclick="scrollToSection('about')">User Profile</button>
+                <button onclick="scrollToSection('projects')">Projects</button>
+                <button onclick="scrollToSection('blog')">Blog</button>
+                <button onclick="scrollToSection('contact')">Connect</button>
+            </div>
+        </div>
 
-<section class="section about">
-    <h2>USER PROFILE</h2>
-    <p>Creative Developer. Vision Builder. Digital Architect.</p>
-</section>
+        <!-- Floating Lottie -->
+        <div class="floating-lottie">
+            <div class="floating-lottie-inner">
+                <dotlottie-wc
+                    src="https://lottie.host/39b1cc52-29d2-46ed-b28d-3ea13ff4ef17/X2kbWK7hzA.lottie"
+                    autoplay
+                    loop
+                ></dotlottie-wc>
+            </div>
+        </div>
 
-<section class="section projects">
-    <h2>PROJECT DATABASE</h2>
-    <p>Loading classified builds...</p>
-</section>
+        <!-- Floating hologram image -->
+        <img src="your-image.png" class="floating-img">
+    </section>
 
-<section class="section skills">
-    <h2>CORE ABILITIES</h2>
-    <p>HTML • CSS • Python • Systems Thinking</p>
-</section>
+    <!-- Other sections -->
+    <section class="section about">
+        <h2>USER PROFILE</h2>
+        <p>Creative Developer. Vision Builder. Digital Architect.</p>
+    </section>
 
-<section class="section contact">
-    <h2>TRANSMISSION</h2>
-    <p>Connect via LinkedIn / GitHub / Email</p>
-</section>
+    <section class="section projects">
+        <h2>PROJECT DATABASE</h2>
+        <p>Loading classified builds...</p>
+    </section>
 
-<script src="script.js"></script>
+    <section class="section skills">
+        <h2>CORE ABILITIES</h2>
+        <p>HTML • CSS • Python • Systems Thinking</p>
+    </section>
 
+    <section class="section contact">
+        <h2>TRANSMISSION</h2>
+        <p>Connect via LinkedIn / GitHub / Email</p>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
 
 
 
