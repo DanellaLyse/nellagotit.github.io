@@ -44,3 +44,8 @@ document.addEventListener("mousemove", e => {
         glow.remove();
     }, 500);
 });
+function scrollToSection(id) {
+    document.querySelector("." + id).scrollIntoView({
+        behavior: "smooth"
+    });
+}
