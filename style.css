@@ -1,4 +1,4 @@
-
+/* ===== Body & Fonts ===== */
 body {
     margin: 0;
     padding: 0;
@@ -9,6 +9,7 @@ body {
     cursor: none; /* hide default cursor */
 }
 
+/* ===== Progress Bar ===== */
 .progress-container {
     position: fixed;
     top: 0;
@@ -179,7 +180,7 @@ body {
     color: #fff;
 }
 
-
+/* Floating Lottie */
 .floating-lottie {
     position: absolute;
     bottom: 50px;
@@ -203,5 +204,3 @@ body {
     75% { transform: translate(5px, -10px) rotate(-1deg);}
     100% { transform: translate(0px, 0px) rotate(0deg);}
 }
-
-
