@@ -204,3 +204,13 @@ body {
     75% { transform: translate(5px, -10px) rotate(-1deg);}
     100% { transform: translate(0px, 0px) rotate(0deg);}
 }
+@keyframes neonPulse {
+    0% { box-shadow: 0 0 5px #ff00ff, 0 0 10px #00fff6; }
+    50% { box-shadow: 0 0 15px #ff00ff, 0 0 30px #00fff6; }
+    100% { box-shadow: 0 0 5px #ff00ff, 0 0 10px #00fff6; }
+}
+
+.progress-bar {
+    animation: neonPulse 1.5s infinite alternate;
+}
+
