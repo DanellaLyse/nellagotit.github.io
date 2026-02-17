@@ -133,10 +133,10 @@ body {
 /* Mouse Glow Effect */
 .cursor-glow {
     position: absolute;
-    width: 40px;
+    width: 60px;
     height: 40px;
-    border-radius: 50%;
-    background: rgba(0, 255, 234, 0.3);
+    border-radius: 50% / 30%;
+    background: radial-gradient(circle, #00fff6, #ff00ff);
     pointer-events: none;
     transform: translate(-50%, -50%);
     mix-blend-mode: screen;
@@ -213,4 +213,5 @@ body {
 .progress-bar {
     animation: neonPulse 1.5s infinite alternate;
 }
+
 
