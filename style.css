@@ -58,14 +58,15 @@ body {
     font-size: 4rem;
     color: #00ffea;
     position: relative;
+    display: inline-block;
 }
 
 .hero-content h1.glitch::after {
     content: attr(data-text);
     position: absolute;
-    left: 2px;
-    text-shadow: -2px 0 #ff00ff;
+    left: 0;
     top: 0;
+    text-shadow: -2px 0 #ff00ff, 2px 2px #00ffea;
     color: #00ffea;
     animation: glitch 1s infinite;
 }
@@ -178,3 +179,4 @@ body {
     line-height: 1.5;
     color: #fff;
 }
+
