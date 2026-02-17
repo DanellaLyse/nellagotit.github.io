@@ -69,6 +69,7 @@ body {
     text-shadow: -2px 0 #ff00ff, 2px 2px #00ffea;
     color: #00ffea;
     animation: glitch 1s infinite;
+    pointer-events: none;
 }
 
 /* Glitch Animation */
@@ -179,4 +180,5 @@ body {
     line-height: 1.5;
     color: #fff;
 }
+
 
