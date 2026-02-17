@@ -1,21 +1,40 @@
+/* ===== Body & Fonts ===== */
 body {
     margin: 0;
-    background: #050510;
-    font-family: Arial, sans-serif;
-    color: #00f7ff;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background: #0a0a0a;
+    color: #ffffff;
     overflow-x: hidden;
+    cursor: none; /* hide default cursor for mouse glow */
 }
 
+/* ===== Progress Bar ===== */
+.progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: rgba(255,255,255,0.1);
+    z-index: 1000;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0;
+    background: #00ffea;
+    transition: width 0.2s ease;
+}
+
+/* ===== Sections & Scroll Reveal ===== */
 .section {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 1;
-    transform: translateY(40px);
-    transition: all 1s ease;
-    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+    padding: 100px 50px;
+    min-height: 100vh;
+    box-sizing: border-box;
 }
 
 .section.show {
@@ -23,163 +42,139 @@ body {
     transform: translateY(0);
 }
 
-/* HERO */
+/* ===== Hero Section ===== */
 .hero {
-    background: radial-gradient(circle at center, #0a0a2a 0%, #000 70%);
-}
-
-h1 {
-    font-size: 70px;
-    letter-spacing: 5px;
-}
-
-/* Glitch Effect */
-.glitch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     position: relative;
-    color: #00f7ff;
+    background: linear-gradient(180deg, #000000 0%, #111111 100%);
 }
 
-.glitch::before,
-.glitch::after {
+.hero-content h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+    color: #00ffea;
+    position: relative;
+}
+
+.hero-content h1.glitch::after {
     content: attr(data-text);
     position: absolute;
-    left: 0;
-    width: 100%;
-}
-
-.glitch::before {
-    animation: glitchTop 2s infinite;
-    color: #ff00ff;
-    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
-}
-
-.glitch::after {
-    animation: glitchBottom 2s infinite;
-    color: #00ffff;
-    clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
-}
-
-@keyframes glitchTop {
-    0% { transform: translate(0); }
-    50% { transform: translate(-3px, -3px); }
-    100% { transform: translate(0); }
-}
-
-@keyframes glitchBottom {
-    0% { transform: translate(0); }
-    50% { transform: translate(3px, 3px); }
-    100% { transform: translate(0); }
-}
-
-/* Section Colors */
-.about { background: #0c0c2e; }
-.projects { background: #111133; }
-.skills { background: #0c0c2e; }
-.contact { background: #000; }
-
-/* Scanline Overlay */
-.scanlines {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(
-        to bottom,
-        rgba(255,255,255,0.02),
-        rgba(255,255,255,0.02) 2px,
-        transparent 2px,
-        transparent 4px
-    );
-    pointer-events: none;
-}
-/* Progress Bar */
-.progress-container {
-    position: fixed;
+    left: 2px;
+    text-shadow: -2px 0 #ff00ff;
     top: 0;
-    width: 100%;
-    height: 5px;
-    background: #111;
-    z-index: 9999;
+    color: #00ffea;
+    animation: glitch 1s infinite;
 }
 
-.progress-bar {
-    height: 5px;
-    width: 0%;
-    background: linear-gradient(90deg, #ff00ff, #00f7ff);
-    transition: width 0.2s;
+/* Glitch Animation */
+@keyframes glitch {
+    0% { transform: translate(0);}
+    20% { transform: translate(-2px, 2px);}
+    40% { transform: translate(-2px, -2px);}
+    60% { transform: translate(2px, 2px);}
+    80% { transform: translate(2px, -2px);}
+    100% { transform: translate(0);}
 }
 
-/* Typing */
+/* Typing Text */
 .typing {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    color: #00ffea;
     margin-top: 20px;
-    font-size: 18px;
-    color: #ff00ff;
+    white-space: pre;
 }
 
-/* Cursor Glow */
-.cursor-glow {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background: #00f7ff;
-    border-radius: 50%;
-    pointer-events: none;
-    box-shadow: 0 0 20px #00f7ff;
-    animation: fadeOut 0.5s linear forwards;
-}
-
-@keyframes fadeOut {
-    to {
-        opacity: 0;
-        transform: scale(2);
-    }
-}
-
-/* Animated Grid Background */
-body::before {
-    content: "";
-    position: fixed;
-    width: 200%;
-    height: 200%;
-    background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 40px,
-        rgba(0,247,255,0.05) 41px
-    ),
-    repeating-linear-gradient(
-        90deg,
-        transparent,
-        transparent 40px,
-        rgba(255,0,255,0.05) 41px
-    );
-    animation: moveGrid 20s linear infinite;
-    z-index: -1;
-}
-
-@keyframes moveGrid {
-    from { transform: translate(0, 0); }
-    to { transform: translate(-200px, -200px); }
-}
-
+/* Command Panel Buttons */
 .command-panel {
     margin-top: 40px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .command-panel button {
-    background: transparent;
-    border: 1px solid #00f7ff;
-    color: #00f7ff;
-    padding: 12px 25px;
-    margin: 10px;
-    cursor: pointer;
-    transition: 0.3s;
+    background: #111;
+    color: #00ffea;
+    border: 1px solid #00ffea;
+    padding: 10px 20px;
     font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .command-panel button:hover {
-    background: #00f7ff;
-    color: black;
-    box-shadow: 0 0 20px #00f7ff;
+    background: #00ffea;
+    color: #111;
+    transform: scale(1.05);
 }
 
+/* Floating Hologram Image */
+.floating-img {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    width: 200px;
+    animation: float 3s ease-in-out infinite;
+    opacity: 0.8;
+}
 
+@keyframes float {
+    0%, 100% { transform: translateY(0);}
+    50% { transform: translateY(-20px);}
+}
+
+/* Mouse Glow Effect */
+.cursor-glow {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(0, 255, 234, 0.3);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: screen;
+    animation: glowFade 0.5s forwards;
+}
+
+@keyframes glowFade {
+    0% { opacity: 1; transform: translate(-50%, -50%) scale(1);}
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(2);}
+}
+
+/* Scanlines Overlay */
+.scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(255,255,255,0.03),
+        rgba(255,255,255,0.03) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+    z-index: 999;
+}
+
+/* About / Projects / Contact Sections */
+.section h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    color: #00ffea;
+    margin-bottom: 20px;
+}
+
+.section p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #fff;
+}
