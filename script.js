@@ -44,6 +44,15 @@ document.addEventListener("mousemove", e => {
         glow.remove();
     }, 500);
 });
+const floatingLottie = document.querySelector('.floating-lottie');
+
+// Optional: make it sway with mouse
+document.addEventListener('mousemove', e => {
+    if (!floatingLottie) return;
+    const x = (e.clientX / window.innerWidth - 0.5) * 20;
+    const y = (e.clientY / window.innerHeight - 0.5) * 20;
+    floatingLottie.style.transform = `translate(${x}px, ${y}px)`;
+});
 function scrollToSection(id) {
     document.querySelector("." + id).scrollIntoView({
         behavior: "smooth"
