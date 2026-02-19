@@ -129,15 +129,6 @@ body {
     box-shadow: 0 0 20px #ff00ff, 0 0 30px #00f0ff;
 }
 
-/* Floating hologram image */
-.floating-img {
-    position: absolute;
-    bottom: 50px;
-    right: 50px;
-    width: 200px;
-    animation: float 3s ease-in-out infinite;
-    opacity: 0.8;
-}
 
 @keyframes float {
     0%, 100% { transform: translateY(0);}
@@ -227,6 +218,7 @@ body {
 .progress-bar {
     animation: neonPulse 1.5s infinite alternate;
 }
+
 
 
 
