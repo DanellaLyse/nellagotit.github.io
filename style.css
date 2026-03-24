@@ -230,6 +230,13 @@ body {
 /* General section style */
 .section {
     padding: 80px 20px;
+}
+
+/* Only limit these sections */
+.section.about,
+.section.projects,
+.section.skills,
+.section.contact {
     max-width: 900px;
     margin: 0 auto;
 }
