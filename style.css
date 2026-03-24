@@ -138,14 +138,14 @@ body {
 /* Mouse Glow Effect */
 .cursor-glow {
     position: absolute;
-    width: 60px;
-    height: 40px;
+    width: 30px;
+    height: 20px;
     border-radius: 50% / 30%;
     background: radial-gradient(circle, #00fff6, #ff00ff);
     pointer-events: none;
     transform: translate(-50%, -50%);
     mix-blend-mode: screen;
-    animation: glowFade 0.5s forwards;
+    animation: glowFade 0.4s forwards;
 }
 
 @keyframes glowFade {
